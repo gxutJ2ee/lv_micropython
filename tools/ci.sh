@@ -132,6 +132,12 @@ function ci_esp32_idf402_setup {
 function ci_esp32_idf44_setup {
     ci_esp32_setup_helper v4.4
 }
+function ci_esp32_idf50_setup {
+    pip3 install pyelftools
+    git clone https://github.com/espressif/esp-idf.git
+    git -C esp-idf checkout v5.0.2
+    ./esp-idf/install.sh
+}
 
 function ci_esp32_build {
     source esp-idf/export.sh
