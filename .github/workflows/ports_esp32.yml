@@ -28,7 +28,12 @@ jobs:
       run: source tools/ci.sh && ci_esp32_idf402_setup
     - name: Build
       run: source tools/ci.sh && ci_esp32_build
-
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: ${{ matrix.board }}.zip
+        path: ports/esp32/build-${{ matrix.board }}
+        
   build_idf44:
     runs-on: ubuntu-20.04
     steps:
@@ -39,3 +44,8 @@ jobs:
       run: source tools/ci.sh && ci_esp32_idf44_setup
     - name: Build
       run: source tools/ci.sh && ci_esp32_build
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: ${{ matrix.board }}.zip
+        path: ports/esp32/build-${{ matrix.board }}
