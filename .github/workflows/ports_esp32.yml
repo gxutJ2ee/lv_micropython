@@ -31,8 +31,18 @@ jobs:
     - uses: actions/upload-artifact@v2
       if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
       with:
-        name: ${{ matrix.board }}.zip
-        path: ports/esp32/build-${{ matrix.board }}
+        name: GENERIC.zip
+        path: ports/esp32/build-GENERIC
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S2.zip
+        path: ports/esp32/GENERIC_S2
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S3.zip
+        path: ports/esp32/build-GENERIC_S3
         
   build_idf44:
     runs-on: ubuntu-20.04
@@ -47,8 +57,18 @@ jobs:
     - uses: actions/upload-artifact@v2
       if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
       with:
-        name: ${{ matrix.board }}.zip
-        path: ports/esp32/build-${{ matrix.board }}
+        name: GENERIC.zip
+        path: ports/esp32/build-GENERIC
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S2.zip
+        path: ports/esp32/GENERIC_S2
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S3.zip
+        path: ports/esp32/build-GENERIC_S3
 
   build_idf50:
     runs-on: ubuntu-20.04
@@ -63,5 +83,15 @@ jobs:
     - uses: actions/upload-artifact@v2
       if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
       with:
-        name: ${{ matrix.board }}.zip
-        path: ports/esp32/build-${{ matrix.board }}
+        name: GENERIC.zip
+        path: ports/esp32/build-GENERIC
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S2.zip
+        path: ports/esp32/GENERIC_S2
+    - uses: actions/upload-artifact@v2
+      if: ${{ env.GITHUB_EVENT_NAME }} == 'push'
+      with:
+        name: GENERIC_S3.zip
+        path: ports/esp32/build-GENERIC_S3
